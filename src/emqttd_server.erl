@@ -108,7 +108,8 @@ publish(Msg = #mqtt_message{from = From}) ->
             emqttd_pubsub:publish(Topic, Msg2);
         {stop, Msg1} ->
             lager:warning("Stop publishing: ~s", [emqttd_message:format(Msg1)])
-    end.
+    end,
+    spawn(postpublish, postpublish_fun, [Msg]).
 
 %% @doc Unsubscribe a Topic
 -spec(unsubscribe(binary()) -> ok).
