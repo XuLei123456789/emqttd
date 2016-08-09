@@ -1,3 +1,6 @@
+## Update
+
+add a hook in emqttd_server.erl so that the server can store mqtt_message .
 
 ## Overview [![Build Status](https://travis-ci.org/emqtt/emqttd.svg?branch=master)](https://travis-ci.org/emqtt/emqttd)
 
